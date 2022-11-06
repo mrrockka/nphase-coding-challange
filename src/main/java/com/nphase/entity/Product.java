@@ -5,12 +5,21 @@ import java.math.BigDecimal;
 public class Product {
     private final String name;
     private final BigDecimal pricePerUnit;
-    private final int quantity;
+    private int quantity;
 
-    public Product(String name, BigDecimal pricePerUnit, int quantity) {
+    private final Category category;
+
+    public Product(String name, BigDecimal pricePerUnit, Category category) {
+        this.name = name;
+        this.pricePerUnit = pricePerUnit;
+        this.category = category;
+    }
+
+    public Product(String name, BigDecimal pricePerUnit, int quantity, Category category) {
         this.name = name;
         this.pricePerUnit = pricePerUnit;
         this.quantity = quantity;
+        this.category = category;
     }
 
     public String getName() {
@@ -23,5 +32,13 @@ public class Product {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 }
